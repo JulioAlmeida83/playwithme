@@ -639,7 +639,7 @@ function Fretboard({ shape, fingers, barre }: { shape: Shape; fingers?: Fingerin
   const fretY = (fretAbs: number) => (fretAbs - startFret + 1) * fretH - fretH / 2;
 
   return (
-    <svg viewBox={`0 0 ${width} ${height}`} className="w-full max-w-[120px] mx-auto">
+    <svg viewBox={`0 0 ${width} ${height}`} className="w-full max-w-[84px] mx-auto">
       <defs>
         <filter id="cardShadow" x="-50%" y="-50%" width="200%" height="200%">
           <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.2" />
@@ -1633,9 +1633,9 @@ export default function App() {
             </div>
 
             <div className="flex flex-col items-center justify-center">
-              <div className="w-full max-w-[180px]">
+              <div className="w-full max-w-[126px]">
                 <Fretboard shape={currentVoicing.shape} fingers={currentVoicing.fingers} barre={currentVoicing.barre} />
-                <p style={{fontSize:11, textAlign:'center', marginTop:8, color:'#475569'}}>
+                <p style={{fontSize:10, textAlign:'center', marginTop:6, color:'#475569'}}>
                   {CHORDS[chordKey].name} · {CHORDS[chordKey].variants[variantIdx].label}
                 </p>
               </div>
@@ -1696,13 +1696,13 @@ export default function App() {
               <div className="text-sm font-medium mb-2 text-center">
                 Acorde atual: {getChordDisplaySymbol(sequence[currentBar].key)} (Compasso {currentBar + 1})
               </div>
-              <div className="w-full max-w-[180px]">
+              <div className="w-full max-w-[126px]">
                 <Fretboard
                   shape={CHORDS[sequence[currentBar].key].variants[Math.min(sequence[currentBar].varIdx, CHORDS[sequence[currentBar].key].variants.length-1)].shape}
                   fingers={CHORDS[sequence[currentBar].key].variants[Math.min(sequence[currentBar].varIdx, CHORDS[sequence[currentBar].key].variants.length-1)].fingers}
                   barre={CHORDS[sequence[currentBar].key].variants[Math.min(sequence[currentBar].varIdx, CHORDS[sequence[currentBar].key].variants.length-1)].barre}
                 />
-                <p style={{fontSize:11, textAlign:'center', marginTop:8, color:'#475569'}}>
+                <p style={{fontSize:10, textAlign:'center', marginTop:6, color:'#475569'}}>
                   {CHORDS[sequence[currentBar].key].name} · {CHORDS[sequence[currentBar].key].variants[sequence[currentBar].varIdx].label}
                 </p>
               </div>
