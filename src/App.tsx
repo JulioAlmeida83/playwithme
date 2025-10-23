@@ -944,7 +944,7 @@ export default function App() {
   const [bassEnabled, setBassEnabled] = useState(false);
   const [bassPattern, setBassPattern] = useState("root-fifth");
   const [bassVolume, setBassVolume] = useState(0.6);
-  const [bpm] = useState(92);
+  const [bpm, setBpm] = useState(92);
   const [swing] = useState(0.08);
   const [strumMs, setStrumMs] = useState(12);
   const [sustain] = useState(0.24);
@@ -1431,7 +1431,7 @@ export default function App() {
           <div className="mb-4 pb-3" style={{borderBottom: '1px solid #333'}}>
             <h3 className="text-xs font-bold tracking-wider" style={{color:'#888', textTransform:'uppercase', letterSpacing:'2px'}}>FADERS & CONTROLS</h3>
           </div>
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-5 md:grid-cols-2 gap-8">
             <div className="flex flex-col items-center">
               <label className="block mb-3 pb-2 text-center" style={{color:'#999', textTransform:'uppercase', fontSize:'10px', letterSpacing:'1.5px', fontWeight:'700', borderBottom:'2px solid #f59e0b'}}>
                 INST VOLUME
@@ -1485,6 +1485,28 @@ export default function App() {
                 className="w-full"
                 style={{accentColor:'#0ea5e9', height:'6px'}}
               />
+            </div>
+            <div className="flex flex-col items-center">
+              <label className="block mb-3 pb-2 text-center" style={{color:'#999', textTransform:'uppercase', fontSize:'10px', letterSpacing:'1.5px', fontWeight:'700', borderBottom:'2px solid #ef4444'}}>
+                TEMPO (BPM)
+              </label>
+              <div className="mb-3 text-center">
+                <span className="text-4xl font-mono font-bold" style={{color:'#ef4444'}}>{bpm}</span>
+              </div>
+              <input
+                type="range"
+                min="40"
+                max="200"
+                step="1"
+                value={bpm}
+                onChange={e=>setBpm(parseFloat(e.target.value))}
+                className="w-full"
+                style={{accentColor:'#ef4444', height:'6px'}}
+              />
+              <div className="flex justify-between text-xs mt-2 w-full" style={{color:'#555'}}>
+                <span>SLOW</span>
+                <span>FAST</span>
+              </div>
             </div>
             <div className="flex flex-col items-center">
               <label className="block mb-3 pb-2 text-center" style={{color:'#999', textTransform:'uppercase', fontSize:'10px', letterSpacing:'1.5px', fontWeight:'700', borderBottom:'2px solid #8b5cf6'}}>
