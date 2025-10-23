@@ -1448,7 +1448,7 @@ export default function App() {
           <div style={{marginBottom:'6.4px', paddingBottom:'3.2px', borderBottom: '1px solid #333'}}>
             <h3 className="text-xs font-bold tracking-wider" style={{color:'#888', textTransform:'uppercase', letterSpacing:'2px'}}>FADERS & EFFECTS</h3>
           </div>
-          <div className="grid md:grid-cols-2" style={{gap:'25.6px'}}>
+          <div className="flex flex-col" style={{gap:'25.6px'}}>
             <div className="flex flex-col items-center">
               <label className="block text-center" style={{marginBottom:'12.8px', paddingBottom:'6.4px', color:'#999', textTransform:'uppercase', fontSize:'9.6px', letterSpacing:'1.44px', fontWeight:'700', borderBottom:'1.6px solid #f59e0b'}}>
                 INST VOLUME
