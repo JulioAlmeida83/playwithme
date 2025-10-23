@@ -1362,9 +1362,10 @@ export default function App() {
   /* ===== UI ===== */
   return (
     <div className="min-h-screen w-full" style={{ background: "#1a1a1a", color: "#e0e0e0" }}>
-      <div className="max-w-7xl mx-auto px-6 py-6 grid gap-6">
-        {/* Mixer - Fonte & Padrões */}
-        <section className="p-6 rounded-xl" style={{background:'linear-gradient(180deg, #2d2d2d 0%, #242424 100%)', boxShadow:'inset 0 2px 1px rgba(255,255,255,0.08), 0 4px 12px rgba(0,0,0,0.6)', border: '2px solid #1a1a1a'}}>
+      <div className="max-w-7xl mx-auto px-6 py-6">
+        <div className="grid md:grid-cols-[1fr_0.8fr] gap-6 mb-6">
+          {/* Mixer - Fonte & Padrões */}
+          <section className="p-6 rounded-xl" style={{background:'linear-gradient(180deg, #2d2d2d 0%, #242424 100%)', boxShadow:'inset 0 2px 1px rgba(255,255,255,0.08), 0 4px 12px rgba(0,0,0,0.6)', border: '2px solid #1a1a1a'}}>
           <div className="mb-2 pb-1" style={{borderBottom: '1px solid #333'}}>
             <h3 className="text-[9px] font-bold tracking-wider" style={{color:'#888', textTransform:'uppercase', letterSpacing:'1.5px'}}>SOURCE & PATTERNS</h3>
           </div>
@@ -1442,8 +1443,8 @@ export default function App() {
           </div>
         </section>
 
-        {/* Mixer - Faders & FX */}
-        <section style={{padding:'19.2px', borderRadius:'12px', background:'linear-gradient(180deg, #2d2d2d 0%, #242424 100%)', boxShadow:'inset 0 2px 1px rgba(255,255,255,0.08), 0 4px 12px rgba(0,0,0,0.6)', border: '2px solid #1a1a1a'}}>
+          {/* Mixer - Faders & FX */}
+          <section style={{padding:'19.2px', borderRadius:'12px', background:'linear-gradient(180deg, #2d2d2d 0%, #242424 100%)', boxShadow:'inset 0 2px 1px rgba(255,255,255,0.08), 0 4px 12px rgba(0,0,0,0.6)', border: '2px solid #1a1a1a'}}>
           <div style={{marginBottom:'6.4px', paddingBottom:'3.2px', borderBottom: '1px solid #333'}}>
             <h3 className="text-xs font-bold tracking-wider" style={{color:'#888', textTransform:'uppercase', letterSpacing:'2px'}}>FADERS & EFFECTS</h3>
           </div>
@@ -1571,6 +1572,7 @@ export default function App() {
             </div>
           </div>
         </section>
+        </div>
 
         {/* ACORDE INDIVIDUAL */}
         <section className="p-6 rounded-lg" style={{background:'linear-gradient(180deg, #2d2d2d 0%, #242424 100%)', boxShadow:'inset 0 2px 1px rgba(255,255,255,0.08), 0 4px 12px rgba(0,0,0,0.6)', border: isPlayingSingle ? '3px solid #10b981' : '2px solid #1a1a1a'}}>
