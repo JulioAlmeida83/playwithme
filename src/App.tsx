@@ -1368,12 +1368,12 @@ export default function App() {
           <div className="mb-2 pb-1" style={{borderBottom: '1px solid #333'}}>
             <h3 className="text-[9px] font-bold tracking-wider" style={{color:'#888', textTransform:'uppercase', letterSpacing:'1.5px'}}>SOURCE & PATTERNS</h3>
           </div>
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <label className="block mb-3 pb-2 text-center" style={{color:'#999', textTransform:'uppercase', fontSize:'10px', letterSpacing:'1.5px', fontWeight:'700', borderBottom:'2px solid #f59e0b'}}>
+              <label className="block mb-4 pb-2 text-center" style={{color:'#999', textTransform:'uppercase', fontSize:'12px', letterSpacing:'1.8px', fontWeight:'700', borderBottom:'2px solid #f59e0b'}}>
                 INSTRUMENTO
               </label>
-              <select className="w-full rounded border p-4 text-base font-medium" style={{borderColor:'#555', background:'#0d0d0d', color:'#e0e0e0', boxShadow:'inset 0 2px 4px rgba(0,0,0,0.5)'}} value={instrument} onChange={(e)=>setInstrument(e.target.value as InstrumentName)}>
+              <select className="w-full rounded border p-5 text-lg font-medium" style={{borderColor:'#555', background:'#0d0d0d', color:'#e0e0e0', boxShadow:'inset 0 2px 4px rgba(0,0,0,0.5)'}} value={instrument} onChange={(e)=>setInstrument(e.target.value as InstrumentName)}>
               <option value="acoustic_guitar_nylon">Violão Nylon</option>
               <option value="acoustic_guitar_steel">Violão Aço</option>
               <option value="electric_guitar_clean">Guitarra Clean</option>
@@ -1385,30 +1385,30 @@ export default function App() {
             </select>
             </div>
             <div>
-              <label className="block mb-3 pb-2 text-center" style={{color:'#999', textTransform:'uppercase', fontSize:'10px', letterSpacing:'1.5px', fontWeight:'700', borderBottom:'2px solid #10b981'}}>
+              <label className="block mb-4 pb-2 text-center" style={{color:'#999', textTransform:'uppercase', fontSize:'12px', letterSpacing:'1.8px', fontWeight:'700', borderBottom:'2px solid #10b981'}}>
                 RITMO VIOLÃO
               </label>
-              <select className="w-full rounded border p-4 text-base font-medium" style={{borderColor:'#555', background:'#0d0d0d', color:'#e0e0e0', boxShadow:'inset 0 2px 4px rgba(0,0,0,0.5)'}} value={patternId} onChange={(e)=>setPatternId(e.target.value)}>
+              <select className="w-full rounded border p-5 text-lg font-medium" style={{borderColor:'#555', background:'#0d0d0d', color:'#e0e0e0', boxShadow:'inset 0 2px 4px rgba(0,0,0,0.5)'}} value={patternId} onChange={(e)=>setPatternId(e.target.value)}>
               {PATTERNS.map(p => <option key={p.id} value={p.id}>{p.label}</option>)}
             </select>
             </div>
             <div>
-              <label className="block mb-3 pb-2 text-center" style={{color:'#999', textTransform:'uppercase', fontSize:'10px', letterSpacing:'1.5px', fontWeight:'700', borderBottom:'2px solid #ec4899'}}>
+              <label className="block mb-4 pb-2 text-center" style={{color:'#999', textTransform:'uppercase', fontSize:'12px', letterSpacing:'1.8px', fontWeight:'700', borderBottom:'2px solid #ec4899'}}>
                 DRUMS PATTERN
               </label>
-              <select className="w-full rounded border p-4 text-base mb-3 font-medium" style={{borderColor:'#555', background:'#0d0d0d', color:'#e0e0e0', boxShadow:'inset 0 2px 4px rgba(0,0,0,0.5)'}} value={drumPatternId} onChange={(e)=>setDrumPatternId(e.target.value)}>
+              <select className="w-full rounded border p-5 text-lg mb-4 font-medium" style={{borderColor:'#555', background:'#0d0d0d', color:'#e0e0e0', boxShadow:'inset 0 2px 4px rgba(0,0,0,0.5)'}} value={drumPatternId} onChange={(e)=>setDrumPatternId(e.target.value)}>
               {Object.entries(DRUM_PATTERNS).map(([k, v]) => <option key={k} value={k}>{v.label}</option>)}
             </select>
-              <label className="flex items-center justify-center gap-2 text-xs mt-2" style={{color:'#aaa'}}>
-                <input type="checkbox" className="w-3 h-3" checked={drumsEnabled} onChange={e=>setDrumsEnabled(e.target.checked)} />
+              <label className="flex items-center justify-center gap-2 text-sm mt-3" style={{color:'#aaa', textTransform:'uppercase', letterSpacing:'1px'}}>
+                <input type="checkbox" className="w-4 h-4" checked={drumsEnabled} onChange={e=>setDrumsEnabled(e.target.checked)} />
                 ENABLE
               </label>
             </div>
             <div>
-              <label className="block mb-3 pb-2 text-center" style={{color:'#999', textTransform:'uppercase', fontSize:'10px', letterSpacing:'1.5px', fontWeight:'700', borderBottom:'2px solid #0ea5e9'}}>
+              <label className="block mb-4 pb-2 text-center" style={{color:'#999', textTransform:'uppercase', fontSize:'12px', letterSpacing:'1.8px', fontWeight:'700', borderBottom:'2px solid #0ea5e9'}}>
                 BASS PATTERN
               </label>
-              <select className="w-full rounded border p-4 text-base mb-3 font-medium" style={{borderColor:'#555', background:'#0d0d0d', color:'#e0e0e0', boxShadow:'inset 0 2px 4px rgba(0,0,0,0.5)'}} value={bassPattern} onChange={(e)=>setBassPattern(e.target.value)}>
+              <select className="w-full rounded border p-5 text-lg mb-4 font-medium" style={{borderColor:'#555', background:'#0d0d0d', color:'#e0e0e0', boxShadow:'inset 0 2px 4px rgba(0,0,0,0.5)'}} value={bassPattern} onChange={(e)=>setBassPattern(e.target.value)}>
                 <option value="steady">1. Steady (Fundamental)</option>
                 <option value="root-fifth">2. Fundamental + Quinta</option>
                 <option value="octave">3. Oitavas Alternadas</option>
@@ -1434,20 +1434,20 @@ export default function App() {
                 <option value="dubstep">23. Dubstep (Wobble)</option>
                 <option value="ska">24. Ska (Upbeat)</option>
               </select>
-              <label className="flex items-center justify-center gap-2 text-xs mt-2" style={{color:'#aaa'}}>
-                <input type="checkbox" className="w-3 h-3" checked={bassEnabled} onChange={e=>setBassEnabled(e.target.checked)} />
+              <label className="flex items-center justify-center gap-2 text-sm mt-3" style={{color:'#aaa', textTransform:'uppercase', letterSpacing:'1px'}}>
+                <input type="checkbox" className="w-4 h-4" checked={bassEnabled} onChange={e=>setBassEnabled(e.target.checked)} />
                 ENABLE
               </label>
             </div>
           </div>
         </section>
 
-        {/* Mixer - Faders */}
+        {/* Mixer - Faders & FX */}
         <section className="p-6 rounded-xl" style={{background:'linear-gradient(180deg, #2d2d2d 0%, #242424 100%)', boxShadow:'inset 0 2px 1px rgba(255,255,255,0.08), 0 4px 12px rgba(0,0,0,0.6)', border: '2px solid #1a1a1a'}}>
           <div className="mb-4 pb-3" style={{borderBottom: '1px solid #333'}}>
-            <h3 className="text-xs font-bold tracking-wider" style={{color:'#888', textTransform:'uppercase', letterSpacing:'2px'}}>FADERS & CONTROLS</h3>
+            <h3 className="text-xs font-bold tracking-wider" style={{color:'#888', textTransform:'uppercase', letterSpacing:'2px'}}>FADERS & EFFECTS</h3>
           </div>
-          <div className="grid lg:grid-cols-5 md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             <div className="flex flex-col items-center">
               <label className="block mb-3 pb-2 text-center" style={{color:'#999', textTransform:'uppercase', fontSize:'10px', letterSpacing:'1.5px', fontWeight:'700', borderBottom:'2px solid #f59e0b'}}>
                 INST VOLUME
@@ -1547,15 +1547,6 @@ export default function App() {
                 <span>SLOW</span>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* Mixer - FX */}
-        <section className="p-6 rounded-xl" style={{background:'linear-gradient(180deg, #2d2d2d 0%, #242424 100%)', boxShadow:'inset 0 2px 1px rgba(255,255,255,0.08), 0 4px 12px rgba(0,0,0,0.6)', border: '2px solid #1a1a1a'}}>
-          <div className="mb-4 pb-3" style={{borderBottom: '1px solid #333'}}>
-            <h3 className="text-xs font-bold tracking-wider" style={{color:'#888', textTransform:'uppercase', letterSpacing:'2px'}}>EFFECTS</h3>
-          </div>
-          <div className="grid lg:grid-cols-1 gap-8">
             <div className="flex flex-col items-center">
               <label className="block mb-3 pb-2 text-center" style={{color:'#999', textTransform:'uppercase', fontSize:'10px', letterSpacing:'1.5px', fontWeight:'700', borderBottom:'2px solid #06b6d4'}}>
                 REVERB MIX
