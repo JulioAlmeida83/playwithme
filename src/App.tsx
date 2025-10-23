@@ -1271,6 +1271,22 @@ export default function App() {
     setIsPlayingSequence(false);
   };
 
+  useEffect(() => {
+    if (isPlayingSingle && singleTimerRef.current) {
+      clearInterval(singleTimerRef.current);
+      singleTimerRef.current = null;
+      playSingleChordBar();
+    }
+  }, [bpm, patternId]);
+
+  useEffect(() => {
+    if (isPlayingSequence && seqTimerRef.current) {
+      clearInterval(seqTimerRef.current);
+      seqTimerRef.current = null;
+      playSequenceBar(seqBarIdxRef.current);
+    }
+  }, [bpm, patternId]);
+
   const handleKeyChange = (newKey: string) => {
     setKey(newKey);
     const symbols = buildSequenceFromProgression(newKey, progression);
