@@ -639,7 +639,7 @@ function Fretboard({ shape, fingers, barre }: { shape: Shape; fingers?: Fingerin
   const fretY = (fretAbs: number) => (fretAbs - startFret + 1) * fretH - fretH / 2;
 
   return (
-    <svg viewBox={`0 0 ${width} ${height}`} className="w-full max-w-[85px] mx-auto">
+    <svg viewBox={`0 0 ${width} ${height}`} className="w-full max-w-[120px] mx-auto">
       <defs>
         <filter id="cardShadow" x="-50%" y="-50%" width="200%" height="200%">
           <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.2" />
@@ -1588,7 +1588,7 @@ export default function App() {
             {isPlayingSingle && <span className="text-xs px-3 py-1 rounded" style={{background:'#10b981', color:'#000', fontWeight:'700', letterSpacing:'1px'}}>PLAYING</span>}
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-6">
+          <div className="grid lg:grid-cols-[2fr_1fr] gap-6 items-center">
             <div className="space-y-4">
               <div className="flex gap-3">
                 <div className="flex-1">
@@ -1632,11 +1632,13 @@ export default function App() {
               </div>
             </div>
 
-            <div>
-              <Fretboard shape={currentVoicing.shape} fingers={currentVoicing.fingers} barre={currentVoicing.barre} />
-              <p style={{fontSize:11, textAlign:'center', marginTop:8, color:'#475569'}}>
-                {CHORDS[chordKey].name} · {CHORDS[chordKey].variants[variantIdx].label}
-              </p>
+            <div className="flex flex-col items-center justify-center">
+              <div className="w-full max-w-[180px]">
+                <Fretboard shape={currentVoicing.shape} fingers={currentVoicing.fingers} barre={currentVoicing.barre} />
+                <p style={{fontSize:11, textAlign:'center', marginTop:8, color:'#475569'}}>
+                  {CHORDS[chordKey].name} · {CHORDS[chordKey].variants[variantIdx].label}
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -1690,18 +1692,20 @@ export default function App() {
 
           {/* Fretboard da sequência */}
           {isPlayingSequence && currentBar >= 0 && currentBar < sequence.length && (
-            <div className="p-4 rounded-xl" style={{background:'#e0e7ff', border:'2px solid #4f46e5'}}>
+            <div className="p-4 rounded-xl flex flex-col items-center" style={{background:'#e0e7ff', border:'2px solid #4f46e5'}}>
               <div className="text-sm font-medium mb-2 text-center">
                 Acorde atual: {getChordDisplaySymbol(sequence[currentBar].key)} (Compasso {currentBar + 1})
               </div>
-              <Fretboard
-                shape={CHORDS[sequence[currentBar].key].variants[Math.min(sequence[currentBar].varIdx, CHORDS[sequence[currentBar].key].variants.length-1)].shape}
-                fingers={CHORDS[sequence[currentBar].key].variants[Math.min(sequence[currentBar].varIdx, CHORDS[sequence[currentBar].key].variants.length-1)].fingers}
-                barre={CHORDS[sequence[currentBar].key].variants[Math.min(sequence[currentBar].varIdx, CHORDS[sequence[currentBar].key].variants.length-1)].barre}
-              />
-              <p style={{fontSize:11, textAlign:'center', marginTop:8, color:'#475569'}}>
-                {CHORDS[sequence[currentBar].key].name} · {CHORDS[sequence[currentBar].key].variants[sequence[currentBar].varIdx].label}
-              </p>
+              <div className="w-full max-w-[180px]">
+                <Fretboard
+                  shape={CHORDS[sequence[currentBar].key].variants[Math.min(sequence[currentBar].varIdx, CHORDS[sequence[currentBar].key].variants.length-1)].shape}
+                  fingers={CHORDS[sequence[currentBar].key].variants[Math.min(sequence[currentBar].varIdx, CHORDS[sequence[currentBar].key].variants.length-1)].fingers}
+                  barre={CHORDS[sequence[currentBar].key].variants[Math.min(sequence[currentBar].varIdx, CHORDS[sequence[currentBar].key].variants.length-1)].barre}
+                />
+                <p style={{fontSize:11, textAlign:'center', marginTop:8, color:'#475569'}}>
+                  {CHORDS[sequence[currentBar].key].name} · {CHORDS[sequence[currentBar].key].variants[sequence[currentBar].varIdx].label}
+                </p>
+              </div>
             </div>
           )}
 
