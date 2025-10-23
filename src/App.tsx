@@ -1443,17 +1443,17 @@ export default function App() {
         </section>
 
         {/* Mixer - Faders & FX */}
-        <section className="p-6 rounded-xl" style={{background:'linear-gradient(180deg, #2d2d2d 0%, #242424 100%)', boxShadow:'inset 0 2px 1px rgba(255,255,255,0.08), 0 4px 12px rgba(0,0,0,0.6)', border: '2px solid #1a1a1a'}}>
-          <div className="mb-4 pb-3" style={{borderBottom: '1px solid #333'}}>
+        <section style={{padding:'19.2px', borderRadius:'12px', background:'linear-gradient(180deg, #2d2d2d 0%, #242424 100%)', boxShadow:'inset 0 2px 1px rgba(255,255,255,0.08), 0 4px 12px rgba(0,0,0,0.6)', border: '2px solid #1a1a1a'}}>
+          <div style={{marginBottom:'12.8px', paddingBottom:'9.6px', borderBottom: '1px solid #333'}}>
             <h3 className="text-xs font-bold tracking-wider" style={{color:'#888', textTransform:'uppercase', letterSpacing:'2px'}}>FADERS & EFFECTS</h3>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2" style={{gap:'19.2px'}}>
             <div className="flex flex-col items-center">
-              <label className="block mb-2 pb-2 text-center" style={{color:'#999', textTransform:'uppercase', fontSize:'9px', letterSpacing:'1.2px', fontWeight:'700', borderBottom:'1.5px solid #f59e0b'}}>
+              <label className="block text-center" style={{marginBottom:'12.8px', paddingBottom:'6.4px', color:'#999', textTransform:'uppercase', fontSize:'9.6px', letterSpacing:'1.44px', fontWeight:'700', borderBottom:'1.6px solid #f59e0b'}}>
                 INST VOLUME
               </label>
-              <div className="mb-2 text-center">
-                <span className="text-3xl font-mono font-bold" style={{color:'#f59e0b'}}>{Math.round(instrumentVolume * 100)}</span>
+              <div className="text-center" style={{marginBottom:'12.8px'}}>
+                <span className="font-mono font-bold" style={{fontSize:'38.4px', color:'#f59e0b'}}>{Math.round(instrumentVolume * 100)}</span>
               </div>
               <input
                 type="range"
@@ -1463,15 +1463,15 @@ export default function App() {
                 value={instrumentVolume}
                 onChange={e=>setInstrumentVolume(parseFloat(e.target.value))}
                 className="w-full"
-                style={{accentColor:'#f59e0b', height:'5px'}}
+                style={{accentColor:'#f59e0b', height:'4px'}}
               />
             </div>
             <div className="flex flex-col items-center">
-              <label className="block mb-2 pb-2 text-center" style={{color:'#999', textTransform:'uppercase', fontSize:'9px', letterSpacing:'1.2px', fontWeight:'700', borderBottom:'1.5px solid #10b981'}}>
+              <label className="block text-center" style={{marginBottom:'12.8px', paddingBottom:'6.4px', color:'#999', textTransform:'uppercase', fontSize:'9.6px', letterSpacing:'1.44px', fontWeight:'700', borderBottom:'1.6px solid #10b981'}}>
                 DRUMS VOLUME
               </label>
-              <div className="mb-2 text-center">
-                <span className="text-3xl font-mono font-bold" style={{color:'#10b981'}}>{Math.round(drumVolume * 100)}</span>
+              <div className="text-center" style={{marginBottom:'12.8px'}}>
+                <span className="font-mono font-bold" style={{fontSize:'38.4px', color:'#10b981'}}>{Math.round(drumVolume * 100)}</span>
               </div>
               <input
                 type="range"
@@ -1481,15 +1481,15 @@ export default function App() {
                 value={drumVolume}
                 onChange={e=>setDrumVolume(parseFloat(e.target.value))}
                 className="w-full"
-                style={{accentColor:'#10b981', height:'5px'}}
+                style={{accentColor:'#10b981', height:'4px'}}
               />
             </div>
             <div className="flex flex-col items-center">
-              <label className="block mb-2 pb-2 text-center" style={{color:'#999', textTransform:'uppercase', fontSize:'9px', letterSpacing:'1.2px', fontWeight:'700', borderBottom:'1.5px solid #0ea5e9'}}>
+              <label className="block text-center" style={{marginBottom:'12.8px', paddingBottom:'6.4px', color:'#999', textTransform:'uppercase', fontSize:'9.6px', letterSpacing:'1.44px', fontWeight:'700', borderBottom:'1.6px solid #0ea5e9'}}>
                 BASS VOLUME
               </label>
-              <div className="mb-2 text-center">
-                <span className="text-3xl font-mono font-bold" style={{color:'#0ea5e9'}}>{Math.round(bassVolume * 100)}</span>
+              <div className="text-center" style={{marginBottom:'12.8px'}}>
+                <span className="font-mono font-bold" style={{fontSize:'38.4px', color:'#0ea5e9'}}>{Math.round(bassVolume * 100)}</span>
               </div>
               <input
                 type="range"
@@ -1499,15 +1499,15 @@ export default function App() {
                 value={bassVolume}
                 onChange={e=>setBassVolume(parseFloat(e.target.value))}
                 className="w-full"
-                style={{accentColor:'#0ea5e9', height:'5px'}}
+                style={{accentColor:'#0ea5e9', height:'4px'}}
               />
             </div>
             <div className="flex flex-col items-center">
-              <label className="block mb-2 pb-2 text-center" style={{color:'#999', textTransform:'uppercase', fontSize:'9px', letterSpacing:'1.2px', fontWeight:'700', borderBottom:'1.5px solid #ef4444'}}>
+              <label className="block text-center" style={{marginBottom:'12.8px', paddingBottom:'6.4px', color:'#999', textTransform:'uppercase', fontSize:'9.6px', letterSpacing:'1.44px', fontWeight:'700', borderBottom:'1.6px solid #ef4444'}}>
                 TEMPO (BPM)
               </label>
-              <div className="mb-2 text-center">
-                <span className="text-3xl font-mono font-bold" style={{color:'#ef4444'}}>{bpm}</span>
+              <div className="text-center" style={{marginBottom:'12.8px'}}>
+                <span className="font-mono font-bold" style={{fontSize:'38.4px', color:'#ef4444'}}>{bpm}</span>
               </div>
               <input
                 type="range"
@@ -1517,20 +1517,20 @@ export default function App() {
                 value={bpm}
                 onChange={e=>setBpm(parseFloat(e.target.value))}
                 className="w-full"
-                style={{accentColor:'#ef4444', height:'5px'}}
+                style={{accentColor:'#ef4444', height:'4px'}}
               />
-              <div className="flex justify-between text-xs mt-1 w-full" style={{color:'#555'}}>
+              <div className="flex justify-between w-full" style={{fontSize:'9.6px', marginTop:'6.4px', color:'#555'}}>
                 <span>SLOW</span>
                 <span>FAST</span>
               </div>
             </div>
             <div className="flex flex-col items-center">
-              <label className="block mb-2 pb-2 text-center" style={{color:'#999', textTransform:'uppercase', fontSize:'9px', letterSpacing:'1.2px', fontWeight:'700', borderBottom:'1.5px solid #8b5cf6'}}>
+              <label className="block text-center" style={{marginBottom:'12.8px', paddingBottom:'6.4px', color:'#999', textTransform:'uppercase', fontSize:'9.6px', letterSpacing:'1.44px', fontWeight:'700', borderBottom:'1.6px solid #8b5cf6'}}>
                 STRUM SPEED
               </label>
-              <div className="mb-2 text-center">
-                <span className="text-3xl font-mono font-bold" style={{color:'#8b5cf6'}}>{strumMs}</span>
-                <span className="text-xs" style={{color:'#666'}}>ms</span>
+              <div className="text-center" style={{marginBottom:'12.8px'}}>
+                <span className="font-mono font-bold" style={{fontSize:'38.4px', color:'#8b5cf6'}}>{strumMs}</span>
+                <span style={{fontSize:'11.2px', color:'#666'}}>ms</span>
               </div>
               <input
                 type="range"
@@ -1540,19 +1540,19 @@ export default function App() {
                 value={strumMs}
                 onChange={e=>setStrumMs(parseFloat(e.target.value))}
                 className="w-full"
-                style={{accentColor:'#8b5cf6', height:'5px'}}
+                style={{accentColor:'#8b5cf6', height:'4px'}}
               />
-              <div className="flex justify-between text-xs mt-1 w-full" style={{color:'#555'}}>
+              <div className="flex justify-between w-full" style={{fontSize:'9.6px', marginTop:'6.4px', color:'#555'}}>
                 <span>FAST</span>
                 <span>SLOW</span>
               </div>
             </div>
             <div className="flex flex-col items-center">
-              <label className="block mb-2 pb-2 text-center" style={{color:'#999', textTransform:'uppercase', fontSize:'9px', letterSpacing:'1.2px', fontWeight:'700', borderBottom:'1.5px solid #06b6d4'}}>
+              <label className="block text-center" style={{marginBottom:'12.8px', paddingBottom:'6.4px', color:'#999', textTransform:'uppercase', fontSize:'9.6px', letterSpacing:'1.44px', fontWeight:'700', borderBottom:'1.6px solid #06b6d4'}}>
                 REVERB MIX
               </label>
-              <div className="mb-2 text-center">
-                <span className="text-3xl font-mono font-bold" style={{color:'#06b6d4'}}>{Math.round(reverbMix * 100)}</span>
+              <div className="text-center" style={{marginBottom:'12.8px'}}>
+                <span className="font-mono font-bold" style={{fontSize:'38.4px', color:'#06b6d4'}}>{Math.round(reverbMix * 100)}</span>
               </div>
               <input
                 type="range"
@@ -1562,9 +1562,9 @@ export default function App() {
                 value={reverbMix}
                 onChange={e=>setReverbMix(parseFloat(e.target.value))}
                 className="w-full"
-                style={{accentColor:'#06b6d4', height:'5px'}}
+                style={{accentColor:'#06b6d4', height:'4px'}}
               />
-              <div className="flex justify-between text-xs mt-1 w-full" style={{color:'#555'}}>
+              <div className="flex justify-between w-full" style={{fontSize:'9.6px', marginTop:'6.4px', color:'#555'}}>
                 <span>DRY</span>
                 <span>WET</span>
               </div>
