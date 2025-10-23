@@ -1444,16 +1444,16 @@ export default function App() {
 
         {/* Mixer - Faders & FX */}
         <section style={{padding:'19.2px', borderRadius:'12px', background:'linear-gradient(180deg, #2d2d2d 0%, #242424 100%)', boxShadow:'inset 0 2px 1px rgba(255,255,255,0.08), 0 4px 12px rgba(0,0,0,0.6)', border: '2px solid #1a1a1a'}}>
-          <div style={{marginBottom:'12.8px', paddingBottom:'9.6px', borderBottom: '1px solid #333'}}>
+          <div style={{marginBottom:'6.4px', paddingBottom:'3.2px', borderBottom: '1px solid #333'}}>
             <h3 className="text-xs font-bold tracking-wider" style={{color:'#888', textTransform:'uppercase', letterSpacing:'2px'}}>FADERS & EFFECTS</h3>
           </div>
-          <div className="grid md:grid-cols-2" style={{gap:'19.2px'}}>
+          <div className="grid md:grid-cols-2" style={{gap:'25.6px'}}>
             <div className="flex flex-col items-center">
               <label className="block text-center" style={{marginBottom:'12.8px', paddingBottom:'6.4px', color:'#999', textTransform:'uppercase', fontSize:'9.6px', letterSpacing:'1.44px', fontWeight:'700', borderBottom:'1.6px solid #f59e0b'}}>
                 INST VOLUME
               </label>
               <div className="text-center" style={{marginBottom:'12.8px'}}>
-                <span className="font-mono font-bold" style={{fontSize:'38.4px', color:'#f59e0b'}}>{Math.round(instrumentVolume * 100)}</span>
+                <span className="font-mono font-bold" style={{fontSize:'28.8px', color:'#f59e0b'}}>{Math.round(instrumentVolume * 100)}</span>
               </div>
               <input
                 type="range"
@@ -1471,7 +1471,7 @@ export default function App() {
                 DRUMS VOLUME
               </label>
               <div className="text-center" style={{marginBottom:'12.8px'}}>
-                <span className="font-mono font-bold" style={{fontSize:'38.4px', color:'#10b981'}}>{Math.round(drumVolume * 100)}</span>
+                <span className="font-mono font-bold" style={{fontSize:'28.8px', color:'#10b981'}}>{Math.round(drumVolume * 100)}</span>
               </div>
               <input
                 type="range"
@@ -1489,7 +1489,7 @@ export default function App() {
                 BASS VOLUME
               </label>
               <div className="text-center" style={{marginBottom:'12.8px'}}>
-                <span className="font-mono font-bold" style={{fontSize:'38.4px', color:'#0ea5e9'}}>{Math.round(bassVolume * 100)}</span>
+                <span className="font-mono font-bold" style={{fontSize:'28.8px', color:'#0ea5e9'}}>{Math.round(bassVolume * 100)}</span>
               </div>
               <input
                 type="range"
@@ -1507,7 +1507,7 @@ export default function App() {
                 TEMPO (BPM)
               </label>
               <div className="text-center" style={{marginBottom:'12.8px'}}>
-                <span className="font-mono font-bold" style={{fontSize:'38.4px', color:'#ef4444'}}>{bpm}</span>
+                <span className="font-mono font-bold" style={{fontSize:'28.8px', color:'#ef4444'}}>{bpm}</span>
               </div>
               <input
                 type="range"
@@ -1529,7 +1529,7 @@ export default function App() {
                 STRUM SPEED
               </label>
               <div className="text-center" style={{marginBottom:'12.8px'}}>
-                <span className="font-mono font-bold" style={{fontSize:'38.4px', color:'#8b5cf6'}}>{strumMs}</span>
+                <span className="font-mono font-bold" style={{fontSize:'28.8px', color:'#8b5cf6'}}>{strumMs}</span>
                 <span style={{fontSize:'11.2px', color:'#666'}}>ms</span>
               </div>
               <input
@@ -1552,7 +1552,7 @@ export default function App() {
                 REVERB MIX
               </label>
               <div className="text-center" style={{marginBottom:'12.8px'}}>
-                <span className="font-mono font-bold" style={{fontSize:'38.4px', color:'#06b6d4'}}>{Math.round(reverbMix * 100)}</span>
+                <span className="font-mono font-bold" style={{fontSize:'28.8px', color:'#06b6d4'}}>{Math.round(reverbMix * 100)}</span>
               </div>
               <input
                 type="range"
